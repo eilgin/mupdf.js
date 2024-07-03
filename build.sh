@@ -21,7 +21,7 @@ emcc -o dist/mupdf-wasm.js -I $MUPDF_DIR/include src/mupdf.c \
 	-sALLOW_MEMORY_GROWTH=1 \
 	-sNODEJS_CATCH_EXIT=0 \
 	-sMODULARIZE=1 \
-	-sEXPORT_ES6=1 \
+	-sEXPORT_ES6=0 \
 	-sEXPORT_NAME='"libmupdf_wasm"' \
 	-sEXPORTED_RUNTIME_METHODS='["ccall","UTF8ToString","lengthBytesUTF8","stringToUTF8"]' \
 	 $MUPDF_DIR/build/wasm/release/libmupdf.a \
@@ -29,5 +29,5 @@ emcc -o dist/mupdf-wasm.js -I $MUPDF_DIR/include src/mupdf.c \
 echo
 
 echo BUILDING TYPESCRIPT
-cat src/mupdf.c | sed '/#include/d' | emcc -E - | node src/gen-wasm-type.js > src/mupdf-wasm.d.ts
+cat src/mupdf.c | sed '/#include/d' | emcc -E - | node src/gen-wasm-type.mjs > src/mupdf-wasm.d.ts
 npx tsc -p .

@@ -1,6 +1,6 @@
 {
-  "name": "mupdf",
-  "version": "0.2.2",
+  "name": "mupdf.cjs",
+  "version": "0.2.5",
   "description": "MuPDF.js",
   "author": "Artifex Software, Inc.",
   "license": "AGPL-3.0-or-later",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/ArtifexSoftware/mupdf.js.git"
   },
-  "type": "module",
+  "type": "commonjs",
   "exports": {
     ".": {
       "types": "./dist/mupdf.d.ts",
@@ -35,9 +35,6 @@
     "dist/tasks.d.ts",
     "dist/tasks.js"
   ],
-  "scripts": {
-    "prepare": "bash build.sh"
-  },
   "devDependencies": {
     "@types/node": "latest",
     "typescript": "latest"

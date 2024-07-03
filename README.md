@@ -1,5 +1,7 @@
 # MuPDF.js
 
+## /!\ This is a fork of the original project to build a CommonJS-compliant library /!\
+
 Welcome to official MuPDF.js library from [Artifex](https://artifex.com) - the maintainers of MuPDF.
 
 This is a build of [MuPDF](https://mupdf.com) for **JavaScript** and **TypeScript**,
